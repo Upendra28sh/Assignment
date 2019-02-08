@@ -1,6 +1,7 @@
 function Node(amount, token) {
   this.amount = amount;
   this.token = token;
+  this.date = new Date();
   this.next = null;
 }
 
@@ -56,10 +57,10 @@ function BuyBid(amount, token) {
 
 function PrintOrderBook() {
   var head = queue.front;
-  console.log("Amount \t Token Accepted");
+  console.log("Amount \t Token \t Time");
   while (head != null) {
     if(head.amount!=0)
-      console.log(head.amount + "\t " + head.token);
+      console.log(head.amount + "\t\t " + head.token + "\t " + head.date);
     head = head.next;
   }
 }
@@ -85,11 +86,11 @@ function SalesLedger(amt,tkn)
 function PrintSalesLedger()
 {
   console.log("\n | UPDATED SALES LEDGER | ");
-  console.log("Amount \t Token");
+  console.log("Amount \t Token \t Time");
   var ledgerHead=ledger.head;
   while(ledgerHead!=null)
   {
-    console.log(ledgerHead.amount + " \t " + ledgerHead.token);
+    console.log(ledgerHead.amount + " \t\t " + ledgerHead.token + "\t " + ledgerHead.date);
     ledgerHead=ledgerHead.next;
   }
 }
@@ -122,3 +123,70 @@ console.log("\nBuy bid Placed for 4 tokens in exchange of BTC");
 console.log("\nAfter Execution of Order \n | ORDER BOOK | ");
 PrintOrderBook();
 PrintSalesLedger();
+
+
+
+// ------ OUTPUT ------ 
+// The Sell Order Book is : 
+// Amount 	 Token 	 Time
+// 1		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 3		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 4		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 5		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 6		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 7		 LTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+
+// Buy bid Placed for 6 tokens in exchange of ETH
+
+// After Execution of Order 
+//  | ORDER BOOK | 
+// Amount 	 Token 	 Time
+// 1		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 4		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 6		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 7		 LTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+
+//  | UPDATED SALES LEDGER | 
+// Amount 	 Token 	 Time
+// 3 		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 3 		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+
+// Buy bid Placed for 2 tokens in exchange of LTC
+
+// After Execution of Order 
+//  | ORDER BOOK | 
+// Amount 	 Token 	 Time
+// 1		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 4		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 6		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 5		 LTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+
+//  | UPDATED SALES LEDGER | 
+// Amount 	 Token 	 Time
+// 3 		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 3 		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2 		 LTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+
+// Buy bid Placed for 4 tokens in exchange of BTC
+
+// After Execution of Order 
+//  | ORDER BOOK | 
+// Amount 	 Token 	 Time
+// 3		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 6		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 5		 LTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+
+//  | UPDATED SALES LEDGER | 
+// Amount 	 Token 	 Time
+// 3 		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 3 		 ETH	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2 		 LTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 1 		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 2 		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
+// 1 		 BTC	 Sat Feb 09 2019 00:36:46 GMT+0530 (India Standard Time)
