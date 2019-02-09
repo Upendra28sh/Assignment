@@ -1,0 +1,79 @@
+body
+{
+    background-color: black
+}
+
+#Sell, #Buy, #Ledger, #Sell-Order-Book, #Buy-Order-Book
+{
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    float: left;
+    margin: 10px;
+}
+
+input
+{
+    text-align: center;
+}
+
+#Specific-Tokens-Div
+{
+    display: none;
+}
+
+#Sell, #Buy
+{
+    width: 20%;
+    height: 300px;
+}
+
+#Sell-Order-Book, #Buy-Order-Book
+{
+    width: 20%;
+    height: 250px;
+}
+
+#Ledger
+{
+    width: 50%;
+    height: 600px;
+    float: right;
+    background-color:#5F9EA0;
+}
+
+#Buy
+{
+    background-color:#90EE90;
+}
+
+#Buy-Order-Book
+{
+    background-color:	#228B22;
+}
+
+#Sell
+{
+    background-color:#CD5C5C;
+}
+
+#Sell-Order-Book
+{
+    background-color:#B22222;
+}
+
+h1
+{
+    color: black;
+}
+
+#error-msg1
+{
+    color: aqua;
+}
+
+#error-msg2
+{
+    color: #B22222;
+}
